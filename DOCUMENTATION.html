@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocalAI Mobile — Customization & Reskinning Documentation</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --border: #1f2937;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #6366f1;
+      --accent-glow: rgba(99, 102, 241, 0.2);
+      --code-bg: #030712;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 48px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--accent-glow);
+      color: #818cf8;
+      border: 1px solid var(--accent);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+    h2 {
+      font-size: 22px;
+      color: #c7d2fe;
+      margin-top: 36px;
+      margin-bottom: 16px;
+      padding-left: 12px;
+      border-left: 4px solid var(--accent);
+    }
+    h3 {
+      font-size: 17px;
+      color: #e0e7ff;
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+    p, li {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+    li { margin-left: 24px; margin-bottom: 6px; }
+    strong { color: #ffffff; }
+    code {
+      background: var(--code-bg);
+      color: #38bdf8;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 13.5px;
+      border: 1px solid #1e293b;
+    }
+    pre {
+      background: var(--code-bg);
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 16px;
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+    pre code {
+      background: transparent;
+      padding: 0;
+      border: none;
+      color: #f1f5f9;
+      font-size: 13px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border: 1px solid var(--border);
+      font-size: 14px;
+    }
+    th { background: #1e293b; color: #ffffff; }
+    td { color: var(--text-muted); }
+    .callout {
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+    .callout strong { color: #818cf8; }
+    a { color: #818cf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="badge">Official Developer Documentation</span>
+    <h1>LocalAI Mobile — Reskinning & Customization Guide</h1>
+    <p>Complete documentation for branding, configuring, reskinning, and deploying the LocalAI Mobile starter kit for Android and iOS.</p>
+
+    <h2>1. Quickstart & Development Setup</h2>
+    <p><strong>System Prerequisites:</strong> Node.js (18+ / 20+ / 22+ LTS), Android Studio & JDK 17 (for Android), macOS & Xcode 15+ (for iOS).</p>
+    <pre><code># 1. Install dependencies
+npm install
+
+# 2. Run automated verification (verifies types and tests)
+npm run typecheck
+npm test
+
+# 3. Launch on physical device or emulator
+npm run android   # Generates native android/ via Expo prebuild
+npm run ios       # Generates native ios/ via Expo prebuild</code></pre>
+    <div class="callout">
+      <strong>Important:</strong> Because LocalAI Mobile uses native C++ bindings (llama.rn) and native ML Kit modules, it must be run as a native development build (<code>npm run android</code> / <code>npm run ios</code>) rather than standard Expo Go.
+    </div>
+
+    <h2>2. App Identity: Name, App ID & Package Name</h2>
+    <p>All high-level app identifiers are configured in <code>app.json</code> located at the root of the project.</p>
+    <h3>Changing App Display Name & Slug</h3>
+    <p>Open <code>app.json</code> and update the top-level fields:</p>
+    <pre><code>{
+  "expo": {
+    "name": "MyBrand AI",          // <-- Your App's public display name (under phone icon)
+    "slug": "mybrand-ai",          // <-- URL-safe project slug
+    "scheme": "mybrand",           // <-- Custom URL scheme (e.g., mybrand://chat)
+    "version": "1.0.0"             // <-- Your app release version
+  }
+}</code></pre>
+
+    <h3>Changing the Android Package Name (Application ID)</h3>
+    <p>In <code>app.json</code>, navigate to the <code>expo.android</code> block:</p>
+    <pre><code>{
+  "expo": {
+    "android": {
+      "package": "com.mycompany.mybrandai"  // <-- Replace with your unique Android package name
+    }
+  }
+}</code></pre>
+
+    <h3>Changing the iOS Bundle Identifier</h3>
+    <p>In <code>app.json</code>, navigate to the <code>expo.ios</code> block:</p>
+    <pre><code>{
+  "expo": {
+    "ios": {
+      "bundleIdentifier": "com.mycompany.mybrandai"  // <-- Replace with your unique iOS bundle identifier
+    }
+  }
+}</code></pre>
+
+    <h2>3. App Icons & Splash Screen</h2>
+    <p>All image assets are stored inside the <code>assets/</code> directory.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Asset File</th>
+          <th>Resolution</th>
+          <th>Format</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>assets/icon.png</code></td>
+          <td>1024 × 1024 px</td>
+          <td>PNG</td>
+          <td>App Store & Google Play Icon</td>
+        </tr>
+        <tr>
+          <td><code>assets/adaptive-icon.png</code></td>
+          <td>1024 × 1024 px</td>
+          <td>Transparent PNG</td>
+          <td>Android Adaptive Foreground Icon</td>
+        </tr>
+        <tr>
+          <td><code>assets/splash.png</code></td>
+          <td>1284 × 2778 px</td>
+          <td>PNG</td>
+          <td>Launch / Splash Screen Image</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>To update the background color of your splash screen and adaptive icon, edit <code>app.json</code>:</p>
+    <pre><code>{
+  "expo": {
+    "backgroundColor": "#0A0A0C",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0A0C"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0A0A0C"
+      }
+    }
+  }
+}</code></pre>
+    <p>After updating icons, regenerate the native assets with: <code>npx expo prebuild --clean</code></p>
+
+    <h2>4. Color Palettes, Themes & Visual Styling</h2>
+    <p>The app includes an intelligent color engine that derives harmonic, high-contrast UI palettes from a seed color or user-selected wallpapers.</p>
+    <h3>Changing the Default Theme Seed</h3>
+    <p>Open <code>src/core/appearancePalette.ts</code> at line 17:</p>
+    <pre><code>export const DEFAULT_SEED = '#6366F1'; // Set your brand primary hex color</code></pre>
+
+    <h3>Overriding UI Colors</h3>
+    <p>In <code>src/core/appearancePalette.ts</code>, modify the <code>createTheme</code> function:</p>
+    <pre><code>colors: {
+  background: '#0B0F19',          // <-- Main screen background
+  surface: '#111827',             // <-- Chat cards, drawer & dialog surfaces
+  surfaceHighlight: '#1F2937',    // <-- Hover/active states
+  surfaceBorder: '#374151',       // <-- Subtle borders
+  accent: '#6366F1',              // <-- Primary buttons & badges
+  text: '#F9FAFB',                // <-- Primary text color (high contrast)
+  textSecondary: '#D1D5DB',       // <-- Secondary text
+  textMuted: '#9CA3AF'            // <-- Placeholders & timestamps
+}</code></pre>
+
+    <h2>5. Interface Strings & App Text Customization</h2>
+    <ul>
+      <li><strong>Header Brand Name:</strong> Open <code>src/components/Header.tsx</code> (line 12) and change <code>brand="Qwerty"</code> to <code>brand="MyBrand"</code>.</li>
+      <li><strong>Empty State Title & Subtitle:</strong> Open <code>app/index.tsx</code> (lines 371-374) to modify the welcome greeting and tagline.</li>
+      <li><strong>Chat Input Placeholder:</strong> Open <code>src/components/Composer.tsx</code> (line 275) to customize the composer placeholder string.</li>
+      <li><strong>Chat Export Filename:</strong> Open <code>app/index.tsx</code> (line 348) to change the export session prefix.</li>
+    </ul>
+
+    <h2>6. AI Personas & System Prompts</h2>
+    <p>Open <code>src/constants/models.ts</code> and find <code>PERSONA_PRESETS</code> (lines 120-163). You can modify persona labels, icons, and prompts, or append your own custom domain personas.</p>
+    <pre><code>export const PERSONA_PRESETS: PersonaPreset[] = [
+  {
+    id: 'companion',
+    label: 'Everyday Companion',
+    icon: '🧠',
+    shortDesc: 'Friendly, concise, helpful conversational assistant',
+    prompt: 'You are MyBrand, a friendly on-device conversational assistant...'
+  },
+  // Add custom personas here!
+];</code></pre>
+
+    <h2>7. Curated Models & Inference Defaults</h2>
+    <p>In <code>src/constants/models.ts</code>, the <code>CURATED_MODELS</code> array specifies the download links, metadata, and default context lengths for local GGUF models. You can add any GGUF model compatible with llama.cpp.</p>
+    <p>Default inference settings (context window, thread count, temperature) are configured under <code>DEFAULT_INFERENCE_CONFIG</code> in the same file.</p>
+
+    <h2>8. Production Builds & Store Publishing</h2>
+    <h3>Cloud Builds with EAS Build (Recommended)</h3>
+    <pre><code># Install EAS CLI
+npm install -g eas-cli
+
+# Login and build signed production release
+eas login
+eas build --platform android --profile production
+eas build --platform ios --profile production</code></pre>
+
+    <h3>Local Android Gradle Build</h3>
+    <pre><code># Build signed Android App Bundle (.aab) locally
+cd android
+./gradlew bundleRelease</code></pre>
+    <p>The compiled bundle will be available at <code>android/app/build/outputs/bundle/release/app-release.aab</code>, ready for submission to the Google Play Console.</p>
+  </div>
+</body>
+</html>
