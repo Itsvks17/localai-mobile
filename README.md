@@ -5,7 +5,8 @@
 </p>
 
 <p align="center">
-  <a href="https://darkryoshin.gumroad.com/l/localai-mobile"><img src="https://img.shields.io/badge/🚀%20Get%20Full%20Starter%20Kit-Gumroad%20($39)-ff90e8?style=for-the-badge&logo=gumroad&logoColor=white" alt="Get Starter Kit on Gumroad" /></a>
+  <a href="https://www.codester.com/items/75670/localai-mobile-react-native-offline-ai-kit?ref=DarkRyoshin"><img src="https://img.shields.io/badge/🛍️%20Buy%20on%20Codester-($39)-0284c7?style=for-the-badge&logo=codeforces&logoColor=white" alt="Buy on Codester" /></a>
+  <a href="https://darkryoshin.gumroad.com/l/localai-mobile"><img src="https://img.shields.io/badge/🚀%20Get%20on%20Gumroad-($39)-ff90e8?style=for-the-badge&logo=gumroad&logoColor=white" alt="Get Starter Kit on Gumroad" /></a>
   <a href="https://expo.dev"><img src="https://img.shields.io/badge/Expo-SDK%2052-black?style=for-the-badge&logo=expo&logoColor=white" alt="Expo 52" /></a>
   <a href="https://reactnative.dev"><img src="https://img.shields.io/badge/React%20Native-0.76.9-61dafb?style=for-the-badge&logo=react&logoColor=black" alt="React Native 0.76" /></a>
   <img src="https://img.shields.io/badge/Tests-119%20Passing-success?style=for-the-badge&logo=node.js&logoColor=white" alt="119 Tests Passing" />
@@ -22,7 +23,7 @@ Zero cloud dependencies, zero monthly API bills (OpenAI / Anthropic / Groq), and
 
 > 💡 **Ready to launch your own offline AI mobile app?**  
 > Skip hundreds of hours of debugging native C++ throttles, background foreground services, and document extractors.  
-> 👉 **[Download the Full Production Starter Kit on Gumroad ($39)](https://darkryoshin.gumroad.com/l/localai-mobile)**
+> 👉 **[Buy on Codester Marketplace ($39)](https://www.codester.com/items/75670/localai-mobile-react-native-offline-ai-kit?ref=DarkRyoshin)** | **[Download on Gumroad ($39)](https://darkryoshin.gumroad.com/l/localai-mobile)**
 
 ---
 
@@ -137,6 +138,7 @@ npm run ios
 * Single Developer License allows unlimited personal and commercial apps.
 * No attribution required in your final compiled mobile app.
 
+👉 **[Get Instant Access on Codester ($39)](https://www.codester.com/items/75670/localai-mobile-react-native-offline-ai-kit?ref=DarkRyoshin)**  
 👉 **[Get Instant Access on Gumroad ($39)](https://darkryoshin.gumroad.com/l/localai-mobile)**
 
 ---
