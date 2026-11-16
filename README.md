@@ -133,13 +133,23 @@ npm run ios
 
 ---
 
-## 🛒 Purchase & Commercial License
+## 🛒 Commercial Licensing & Enterprise Services
 
-* Single Developer License allows unlimited personal and commercial apps.
-* No attribution required in your final compiled mobile app.
+We offer 3 flexible tiers depending on your project and team scale:
 
-👉 **[Get Instant Access on Codester ($39)](https://www.codester.com/items/75670/localai-mobile-react-native-offline-ai-kit?ref=DarkRyoshin)**  
-👉 **[Get Instant Access on Gumroad ($39)](https://darkryoshin.gumroad.com/l/localai-mobile)**
+| Tier | Description | Pricing & Access |
+| :--- | :--- | :--- |
+| **Tier 1: Single App License** | Full production source code, native C++ patches, background service modules, 119 tests, and docs for 1 commercial app. | **$39** — 👉 **[Buy on Codester](https://www.codester.com/items/75670/localai-mobile-react-native-offline-ai-kit?ref=DarkRyoshin)** \| **[Buy on Gumroad](https://darkryoshin.gumroad.com/l/localai-mobile)** |
+| **Tier 2: Agency Multi-App License** | Commercial license for dev agencies and studios to deploy the offline AI engine across **unlimited client applications** with priority email support. | **$199** — Contact: [ris684600@gmail.com](mailto:ris684600@gmail.com) |
+| **Tier 3: Done-For-You Custom Integration** | Full white-label mobile app development: custom GGUF models, UI branding, document parsers, and store-ready APK/AAB/IPA builds delivered directly for your business. | **$1,500 – $2,500** — Contact: [ris684600@gmail.com](mailto:ris684600@gmail.com) |
+
+---
+
+### 📬 Contact & Inquiries
+
+For custom model fine-tuning, enterprise offline AI integrations, or contract work:
+* **Email**: [ris684600@gmail.com](mailto:ris684600@gmail.com)
+* **Lead Engineer**: Vivek Kumar Singh ([@Itsvks17](https://github.com/Itsvks17))
 
 ---
 
