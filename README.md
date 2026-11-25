@@ -23,11 +23,23 @@ Zero cloud dependencies, zero monthly API bills (OpenAI / Anthropic / Groq), and
 
 > 💡 **Ready to launch your own offline AI mobile app?**  
 > Skip hundreds of hours of debugging native C++ throttles, background foreground services, and document extractors.  
-> 👉 **[Buy on Codester Marketplace ($39)](https://www.codester.com/items/75670/localai-mobile-react-native-offline-ai-kit?ref=DarkRyoshin)** | **[Download on Gumroad ($39)](https://darkryoshin.gumroad.com/l/localai-mobile)**
+> 👉 **[Buy on Codester Marketplace ($39)](https://www.codester.com/items/75670/localai-mobile-react-native-offline-ai-kit?ref=DarkRyoshin)** | **[Download on Gumroad ($39)](https://darkryoshin.gumroad.com/l/localai-mobile)** | **[Architecture Deep-Dive →](ARCHITECTURE.md)**
+
+### 🎬 Live On-Device Demo
+
+<p align="center">
+  <img src="assets/demo.gif" width="280" alt="LocalAI Mobile Live On-Device Streaming Demo" />
+</p>
+
+<p align="center">
+  <sub>Real screen recording on a Motorola Edge 50 Neo (Dimensity 7300) running GGUF inference 100% offline.</sub>
+</p>
 
 ---
 
 ## 🔥 Key Technical Capabilities
+
+> 📐 **Deep-Dive:** Inspect the complete C++ throttling control loop, SQLite recovery flow, and Expo SDK 52 native pipeline in **[ARCHITECTURE.md](ARCHITECTURE.md)**.
 
 ### 1. 🧠 100% Local On-Device Inference
 * Powered by native **`llama.rn`** bindings with GPU/CPU acceleration.
